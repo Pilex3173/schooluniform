@@ -1,0 +1,25 @@
+CREATE TABLE products(
+id INT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(255),
+category VARCHAR(50),
+size VARCHAR(20),
+price DECIMAL(12,2),
+stock INT,
+image VARCHAR(255)
+);
+
+CREATE TABLE orders(
+id INT AUTO_INCREMENT PRIMARY KEY,
+customer_name VARCHAR(100),
+total DECIMAL(12,2),
+status VARCHAR(50),
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE order_items(
+id INT AUTO_INCREMENT PRIMARY KEY,
+order_id INT,
+product_id INT,
+qty INT,
+price DECIMAL(12,2)
+);
