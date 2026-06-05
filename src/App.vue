@@ -80,7 +80,3 @@ function addToCart(item){
 alert(item.name + ' ditambahkan')
 }
 </script>
-
-<style>
-@import './assets/style.css';
-</style>
