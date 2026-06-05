@@ -19,14 +19,15 @@ const products = [
 }
 ];
 
-let cart = 0;
+let cart = [];
 
 const productContainer =
 document.getElementById("products");
 
-products.forEach(product=>{
+products.forEach(product => {
 
 productContainer.innerHTML += `
+
 <div class="card">
 
 <img src="${product.image}">
@@ -41,7 +42,7 @@ Rp ${product.price.toLocaleString()}
 
 <button
 class="btn"
-onclick="addToCart()"
+onclick="addToCart(${product.id})"
 >
 Tambah Keranjang
 </button>
@@ -49,16 +50,64 @@ Tambah Keranjang
 </div>
 
 </div>
+
 `;
 
 });
 
-function addToCart(){
+function addToCart(id){
 
-cart++;
+const product =
+products.find(p => p.id === id);
 
-document.getElementById(
-"cartCount"
-).innerText = cart;
+cart.push(product);
+
+document.getElementById("cartCount")
+.innerText = cart.length;
+
+alert(product.name + " ditambahkan");
+
+}
+
+function checkoutWhatsApp(){
+
+if(cart.length === 0){
+
+alert("Keranjang masih kosong");
+
+return;
+
+}
+
+let message =
+`Halo Pilex Uniform,%0A%0ASaya ingin memesan:%0A`;
+
+let total = 0;
+
+cart.forEach((item,index)=>{
+
+message +=
+`${index+1}. ${item.name} - Rp ${item.price.toLocaleString()}%0A`;
+
+total += item.price;
+
+});
+
+message +=
+`%0A--------------------%0A`;
+
+message +=
+`Total : Rp ${total.toLocaleString()}%0A`;
+
+message +=
+`%0ANama:%0AAlamat:%0ANo HP:%0A`;
+
+const phone =
+"6281234567890"; // GANTI NOMOR ANDA
+
+window.open(
+`https://wa.me/${phone}?text=${message}`,
+"_blank"
+);
 
 }
