@@ -254,5 +254,8 @@ document.getElementById(
 ).innerText = 0;
 
 renderCart();
-
-
+document.getElementById(
+"cartCount"
+).innerText =
+cart.length;
+renderCart();
