@@ -1,10 +1,26 @@
 const products = [
 {
-    id:1,
-    name:"Seragam SD Putih Merah",
-    price:125000,
-    image:"https://picsum.photos/300?1"
+id:1,
+name:"Seragam SD Putih Merah",
+price:125000,
+sizes:["S","M","L","XL","XXL"],
+image:"https://picsum.photos/300?1"
 },
+{
+id:2,
+name:"Seragam SMP Putih Biru",
+price:145000,
+sizes:["S","M","L","XL","XXL"],
+image:"https://picsum.photos/300?2"
+},
+{
+id:3,
+name:"Seragam SMA Putih Abu",
+price:165000,
+sizes:["S","M","L","XL","XXL"],
+image:"https://picsum.photos/300?3"
+}
+];
 {
     id:2,
     name:"Seragam SMP Putih Biru",
@@ -116,11 +132,22 @@ productContainer.innerHTML += `
 Rp ${product.price.toLocaleString()}
 </div>
 
+<select id="size-${product.id}" class="size-select">
+
+${product.sizes.map(size =>
+`<option value="${size}">
+${size}
+</option>`
+).join("")}
+
+</select>
+
 <button
 class="btn"
-onclick="addToCart(${product.id})"
->
+onclick="addToCart(${product.id})">
+
 Tambah Keranjang
+
 </button>
 
 </div>
