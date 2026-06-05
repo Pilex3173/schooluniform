@@ -35,7 +35,10 @@ image:"https://picsum.photos/300?3"
 }
 ];
 
-let cart = [];
+let cart =
+JSON.parse(
+localStorage.getItem("cart")
+) || [];
 function openCart(){
 
 document.getElementById(
@@ -176,6 +179,11 @@ cart.push({
 ...product,
 selectedSize:size
 });
+
+localStorage.setItem(
+"cart",
+JSON.stringify(cart)
+);
 
 document.getElementById(
 "cartCount"
