@@ -76,6 +76,10 @@ cartItems.innerHTML += `
 
 <br>
 
+Ukuran:
+${item.selectedSize}
+<br>
+
 Rp ${item.price.toLocaleString()}
 
 </div>
@@ -161,9 +165,17 @@ Tambah Keranjang
 function addToCart(id){
 
 const product =
-products.find(p=>p.id===id);
+products.find(p => p.id === id);
 
-cart.push(product);
+const size =
+document.getElementById(
+`size-${id}`
+).value;
+
+cart.push({
+...product,
+selectedSize:size
+});
 
 document.getElementById(
 "cartCount"
