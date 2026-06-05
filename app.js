@@ -1,25 +1,28 @@
 const products = [
-{
-    id:1,
-    name:"Seragam SD Putih Merah",
-    price:125000,
-    sizes:["S","M","L","XL","XXL"],
-    image:"https://picsum.photos/300?1"
-},
-{
-    id:2,
-    name:"Seragam SMP Putih Biru",
-    price:145000,
-    sizes:["S","M","L","XL","XXL"],
-    image:"https://picsum.photos/300?2"
-},
-{
-    id:3,
-    name:"Seragam SMA Putih Abu",
-    price:165000,
-    sizes:["S","M","L","XL","XXL"],
-    image:"https://picsum.photos/300?3"
-}
+    {
+        id:1,
+        name:"Seragam SD Putih Merah",
+        price:125000,
+        sizes:["S","M","L","XL","XXL"],
+        // Seragam SD putih merah
+        image:"https://images.unsplash.com/photo-1604671801908-6f0c6a092c05?w=400"
+    },
+    {
+        id:2,
+        name:"Seragam SMP Putih Biru",
+        price:145000,
+        sizes:["S","M","L","XL","XXL"],
+        // Seragam SMP/siswa muda
+        image:"https://images.unsplash.com/photo-1571210862729-78a52d3779a2?w=400"
+    },
+    {
+        id:3,
+        name:"Seragam SMA Putih Abu",
+        price:165000,
+        sizes:["S","M","L","XL","XXL"],
+        // Seragam SMA/remaja
+        image:"https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400"
+    }
 ];
 
 let cart =
