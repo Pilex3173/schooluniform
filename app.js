@@ -295,3 +295,4 @@ document.getElementById(
 cart.length;
 
 renderCart();
+}
