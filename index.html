@@ -42,9 +42,16 @@ onclick="openCart()">
             SD • SMP • SMA • Pramuka • Olahraga
         </p>
 
-        <button class="hero-btn">
-            Belanja Sekarang
-        </button>
+        <button
+class="hero-btn"
+onclick="
+document.getElementById('products')
+.scrollIntoView({
+behavior:'smooth'
+})
+">
+Belanja Sekarang
+</button>
 
     </div>
 
