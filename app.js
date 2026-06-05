@@ -111,6 +111,11 @@ total.toLocaleString();
 function removeItem(index){
 
 cart.splice(index,1);
+    
+localStorage.setItem(
+"cart",
+JSON.stringify(cart)
+);
 
 document.getElementById(
 "cartCount"
@@ -238,5 +243,16 @@ window.open(
 `https://wa.me/${phone}?text=${message}`,
 "_blank"
 );
+cart = [];
 
-}
+localStorage.removeItem(
+"cart"
+);
+
+document.getElementById(
+"cartCount"
+).innerText = 0;
+
+renderCart();
+
+
