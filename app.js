@@ -20,7 +20,83 @@ const products = [
 ];
 
 let cart = [];
+function openCart(){
 
+document.getElementById(
+"cartModal"
+).style.display = "block";
+
+renderCart();
+
+}
+
+function closeCart(){
+
+document.getElementById(
+"cartModal"
+).style.display = "none";
+
+}
+function renderCart(){
+
+const cartItems =
+document.getElementById("cartItems");
+
+cartItems.innerHTML = "";
+
+let total = 0;
+
+cart.forEach((item,index)=>{
+
+total += item.price;
+
+cartItems.innerHTML += `
+
+<div class="cart-item">
+
+<div>
+
+<strong>${item.name}</strong>
+
+<br>
+
+Rp ${item.price.toLocaleString()}
+
+</div>
+
+<button
+class="remove-btn"
+onclick="removeItem(${index})">
+
+Hapus
+
+</button>
+
+</div>
+
+`;
+
+});
+
+document.getElementById(
+"cartTotal"
+).innerHTML =
+"Total: Rp " +
+total.toLocaleString();
+
+}
+function removeItem(index){
+
+cart.splice(index,1);
+
+document.getElementById(
+"cartCount"
+).innerText =
+cart.length;
+
+renderCart();
+
+}
 const productContainer =
 document.getElementById("products");
 
@@ -58,17 +134,18 @@ Tambah Keranjang
 function addToCart(id){
 
 const product =
-products.find(p => p.id === id);
+products.find(p=>p.id===id);
 
 cart.push(product);
 
-document.getElementById("cartCount")
-.innerText = cart.length;
+document.getElementById(
+"cartCount"
+).innerText =
+cart.length;
 
-alert(product.name + " ditambahkan");
+renderCart();
 
 }
-
 function checkoutWhatsApp(){
 
 if(cart.length === 0){
