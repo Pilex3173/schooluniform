@@ -4,45 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pilex Uniform Store</title>
-
 <link rel="stylesheet" href="./style.css">
-<script src="./app.js"></script>
+<!-- FIX 1: Tambah defer agar script jalan setelah DOM siap -->
+<!-- FIX 2: Hapus duplikat, cukup satu script tag di sini -->
+<script src="./app.js" defer></script>
 </head>
 <body>
-
 <header class="navbar">
-
     <div class="logo">
         🎓 KANIYA UNIFORM
     </div>
-
     <nav>
         <a href="#">SD</a>
         <a href="#">SMP</a>
         <a href="#">SMA</a>
         <a href="#">PRAMUKA</a>
     </nav>
-
     <button
 class="cart-btn"
 onclick="openCart()">
         🛒 Keranjang (<span id="cartCount">0</span>)
     </button>
-
 </header>
-
 <section class="hero">
-
     <div class="hero-content">
-
         <h1>
             Seragam Sekolah Lengkap
         </h1>
-
         <p>
             SD • SMP • SMA • Pramuka • Olahraga
         </p>
-
         <button
 class="hero-btn"
 onclick="
@@ -53,110 +44,71 @@ behavior:'smooth'
 ">
 Belanja Sekarang
 </button>
-
     </div>
-
 </section>
-
 <section class="category">
-
     <h2>Kategori</h2>
-
     <div class="category-grid">
-
         <div class="category-card">SD</div>
         <div class="category-card">SMP</div>
         <div class="category-card">SMA</div>
         <div class="category-card">PRAMUKA</div>
-
     </div>
-
 </section>
-
 <section>
-
     <h2 class="title">
         Produk Unggulan
     </h2>
-
     <div class="products" id="products"></div>
-
 </section>
-
 <section class="features">
-
     <div class="feature">
         🚚 Pengiriman Cepat
     </div>
-
     <div class="feature">
         ⭐ Kualitas Terbaik
     </div>
-
     <div class="feature">
         💰 Harga Grosir
     </div>
-
 </section>
     <section class="checkout-section">
-
     <button
     class="checkout-btn"
     onclick="checkoutWhatsApp()">
-
         Checkout via WhatsApp
-
     </button>
-
 </section>
 <div id="cartModal" class="modal">
-
     <div class="modal-content">
-
         <div class="modal-header">
-
             <h2>Keranjang Belanja</h2>
-
             <span
             class="close"
             onclick="closeCart()">
             ×
             </span>
-
         </div>
-
         <div id="cartItems"></div>
-
         <h3 id="cartTotal">
             Total: Rp 0
         </h3>
-
         <button
         class="checkout-btn"
         onclick="checkoutWhatsApp()">
-
             Checkout WhatsApp
-
         </button>
-
     </div>
-
 </div>
 <footer>
-
     <h3>Pilex Uniform Store</h3>
-
     <p>
         WhatsApp : 0812xxxxxxxx
     </p>
-
     <p>
         © 2025 Pilex Uniform
     </p>
-
 </footer>
-
-<script src="./app.js"></script>
-
+<!-- TIDAK ADA script tag kedua di sini (sudah dihapus) -->
 </body>
 </html>
