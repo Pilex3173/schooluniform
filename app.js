@@ -203,8 +203,13 @@ let total = 0;
 cart.forEach((item,index)=>{
 
 message +=
-`${index+1}. ${item.name} - Rp ${item.price.toLocaleString()}%0A`;
+`${index+1}. ${item.name}%0A`;
 
+message +=
+`Ukuran : ${item.selectedSize}%0A`;
+
+message +=
+`Harga : Rp ${item.price.toLocaleString()}%0A%0A`;
 total += item.price;
 
 });
